@@ -1,9 +1,11 @@
 import AnonymousInnerClass.Person;
 import LocalInnerClass.Calculator;
 import MemberInnerClass.Print;
+import NestedInterface.Events;
+import NestedInterface.View;
 import StaticNestedCasses.University;
 
-public class Main {
+public class Main implements View{
 
     public static void main(String[] args) {
 
@@ -67,6 +69,7 @@ public class Main {
         System.out.println("------------------------------------------------------");
 
         System.out.println("\n\n***********Static Inner Class*************");
+        //University Object is not been created.
         University.Department csDepartment = new University.Department("CS");
         csDepartment.setDepartmentFaculty(8);
 
@@ -79,5 +82,27 @@ public class Main {
         System.out.println("\nGetting Dept Name: "+civilDepartment.getDepartmentName());
         System.out.println("Getting # of Faculty Members: "+civilDepartment.getNumberOfFaculty());
 
+
+        System.out.println("------------------------------------------------------");
+
+        System.out.println("\n\n***********Anonymous Class Implementing Nested Interface*************");
+        Events events = new Events();
+        //Below is your anonymous class
+        events.setOnClickListener(new View.onClickListener() {
+            //Receiving Click Listener
+            @Override
+            public void onClick() {
+                System.out.println("Event Clicked!!");
+            }
+        });
+        events.setOnFocusListener(new View.onFocusChangeListener() {
+            //Receiving Click Listener
+            @Override
+            public void onFocus() {
+                System.out.println("Event is being Focused!!");
+            }
+        });
+        events.setClicked();
+        events.setFocused();
     }
 }

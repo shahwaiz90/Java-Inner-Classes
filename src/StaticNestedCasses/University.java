@@ -2,9 +2,16 @@ package StaticNestedCasses;
 
 public class University {
 
+    University(){
+        System.out.println("University Created!!");
+    }
+
     public static class Department{
         String name;
         int numberOfFaculty;
+        Department(){
+            System.out.println("Department Created!!");
+        }
         public Department(String departmentName){
             name = departmentName;
             System.out.println("Department Created: "+name);
