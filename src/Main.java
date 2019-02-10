@@ -87,7 +87,7 @@ public class Main implements View{
 
         System.out.println("\n\n***********Anonymous Class Implementing Nested Interface*************");
         Events events = new Events();
-        //Below is your anonymous class
+        //Below is your anonymous class implementing an interface.
         events.setOnClickListener(new View.onClickListener() {
             //Receiving Click Listener
             @Override
