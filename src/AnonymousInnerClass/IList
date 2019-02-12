@@ -1,0 +1,6 @@
+package AnonymousInnerClass;
+
+public interface IList {
+    void add(int a);
+    int get();
+}
